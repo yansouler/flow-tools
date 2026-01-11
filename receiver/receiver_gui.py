@@ -1,14 +1,14 @@
 import sys
 import os
-from PyQt5.QtWidgets import (
+from PySide6.QtWidgets import (
     QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QTableWidget, QTableWidgetItem, QFileDialog, QLineEdit,
     QLabel, QSpinBox, QCheckBox, QGroupBox, QComboBox, QMessageBox,
     QProgressBar, QTextEdit, QHeaderView, QSplitter, QFormLayout
 )
-from PyQt5.QtCore import Qt, QThread, pyqtSignal, QTimer
-from PyQt5.QtGui import QFont
-from PyQt5 import QtWidgets
+from PySide6.QtCore import Qt, QThread, Signal, QTimer
+from PySide6.QtGui import QFont
+from PySide6 import QtWidgets
 
 # 导入matplotlib相关模块
 import matplotlib
@@ -26,7 +26,7 @@ from common.config import ReceiverConfig
 
 class PacketCaptureThread(QThread):
     """数据包捕获线程"""
-    packet_received = pyqtSignal(object)
+    packet_received = Signal(object)
     
     def __init__(self, packet_capture):
         super().__init__()

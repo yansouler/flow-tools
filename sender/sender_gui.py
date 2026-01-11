@@ -1,13 +1,13 @@
 import sys
 import os
-from PyQt5.QtWidgets import (
+from PySide6.QtWidgets import (
     QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QTableWidget, QTableWidgetItem, QFileDialog, QLineEdit,
     QLabel, QSpinBox, QCheckBox, QGroupBox, QComboBox, QMessageBox,
     QProgressBar, QTextEdit, QHeaderView, QInputDialog
 )
-from PyQt5.QtCore import Qt, QThread, pyqtSignal, QTimer
-from PyQt5.QtGui import QFont
+from PySide6.QtCore import Qt, QThread, Signal, QTimer
+from PySide6.QtGui import QFont
 
 from sender.ip_manager import IPManager
 from sender.interface_manager import InterfaceManager
@@ -16,8 +16,8 @@ from common.config import SenderConfig, IPConfig
 
 class TrafficSenderThread(QThread):
     """流量发送线程"""
-    status_update = pyqtSignal(dict)
-    finished = pyqtSignal()
+    status_update = Signal(dict)
+    finished = Signal()
     
     def __init__(self, traffic_sender, ip_list):
         super().__init__()

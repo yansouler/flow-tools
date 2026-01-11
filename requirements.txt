@@ -1,6 +1,6 @@
 scapy>=2.4.5
 pywin32>=303
-PyQt5>=5.15.6
+PySide6>=6.5.0
 matplotlib>=3.5.2
 seaborn>=0.11.2
 pyinstaller>=5.3
